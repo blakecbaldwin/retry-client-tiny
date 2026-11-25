@@ -1,0 +1,111 @@
+{
+  "clients": 12,
+  "failureWindowMs": 2500,
+  "bucketMs": 250,
+  "modes": [
+    {
+      "id": "naive",
+      "label": "Naive immediate retries",
+      "color": "#d64545",
+      "totalRequests": 10851,
+      "succeeded": 12,
+      "failed": 0,
+      "elapsedMs": 2490,
+      "buckets": [
+        371,
+        799,
+        1140,
+        1155,
+        1361,
+        1340,
+        1265,
+        1248,
+        1498,
+        662,
+        12,
+        0,
+        0,
+        0
+      ],
+      "peakPerSecond": 5992
+    },
+    {
+      "id": "backoff",
+      "label": "Backoff only",
+      "color": "#e08a2e",
+      "totalRequests": 72,
+      "succeeded": 12,
+      "failed": 0,
+      "elapsedMs": 2518,
+      "buckets": [
+        24,
+        12,
+        12,
+        0,
+        0,
+        0,
+        12,
+        0,
+        0,
+        0,
+        12,
+        0,
+        0,
+        0
+      ],
+      "peakPerSecond": 96
+    },
+    {
+      "id": "backoff-jitter",
+      "label": "Backoff + jitter",
+      "color": "#2e7de0",
+      "totalRequests": 105,
+      "succeeded": 12,
+      "failed": 0,
+      "elapsedMs": 3156,
+      "buckets": [
+        41,
+        9,
+        7,
+        5,
+        4,
+        5,
+        6,
+        4,
+        6,
+        6,
+        9,
+        2,
+        1,
+        0
+      ],
+      "peakPerSecond": 164
+    },
+    {
+      "id": "backoff-jitter-budget",
+      "label": "Backoff + jitter + budget",
+      "color": "#2ea36b",
+      "totalRequests": 24,
+      "succeeded": 0,
+      "failed": 12,
+      "elapsedMs": 96,
+      "buckets": [
+        24,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "peakPerSecond": 96
+    }
+  ]
+}

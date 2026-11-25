@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Retry storm comparison</title></head>
+<body>
+<h1>Retry storm comparison</h1>
+<p>12 clients, one logical call each. The server fails for the first 2.5 seconds, then recovers. Numbers in the legend are total requests that hit the server.</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="340" viewBox="0 0 920 340" font-family="sans-serif">
+<rect width="920" height="340" fill="#ffffff"/>
+<text x="50" y="20" font-size="15" font-weight="bold">Requests per 0.25s bucket, by retry policy</text>
+<rect x="50" y="30" width="653.8461538461539" height="270" fill="#f3d9d9" opacity="0.6"/>
+<text x="56" y="46" font-size="11" fill="#8a3b3b">server down</text>
+<line x1="50" y1="300" x2="900" y2="300" stroke="#333"/>
+<line x1="50" y1="30" x2="50" y2="300" stroke="#333"/>
+<text x="50" y="332" font-size="11">time (seconds): 0 to 3.5</text>
+<text x="6" y="42" font-size="11">max 1498 req/bucket</text>
+<polyline fill="none" stroke="#d64545" stroke-width="2" points="50.0,233.1 115.4,156.0 180.8,94.5 246.2,91.8 311.5,54.7 376.9,58.5 442.3,72.0 507.7,75.1 573.1,30.0 638.5,180.7 703.8,297.8 769.2,300.0 834.6,300.0 900.0,300.0"/>
+<polyline fill="none" stroke="#e08a2e" stroke-width="2" points="50.0,295.7 115.4,297.8 180.8,297.8 246.2,300.0 311.5,300.0 376.9,300.0 442.3,297.8 507.7,300.0 573.1,300.0 638.5,300.0 703.8,297.8 769.2,300.0 834.6,300.0 900.0,300.0"/>
+<polyline fill="none" stroke="#2e7de0" stroke-width="2" points="50.0,292.6 115.4,298.4 180.8,298.7 246.2,299.1 311.5,299.3 376.9,299.1 442.3,298.9 507.7,299.3 573.1,298.9 638.5,298.9 703.8,298.4 769.2,299.6 834.6,299.8 900.0,300.0"/>
+<polyline fill="none" stroke="#2ea36b" stroke-width="2" points="50.0,295.7 115.4,300.0 180.8,300.0 246.2,300.0 311.5,300.0 376.9,300.0 442.3,300.0 507.7,300.0 573.1,300.0 638.5,300.0 703.8,300.0 769.2,300.0 834.6,300.0 900.0,300.0"/>
+<rect x="370" y="314" width="10" height="10" fill="#d64545"/>
+<text x="384" y="324" font-size="11">Naive immediate retries (10851)</text>
+<rect x="596.2" y="314" width="10" height="10" fill="#e08a2e"/>
+<text x="610.2" y="324" font-size="11">Backoff only (72)</text>
+<rect x="731" y="314" width="10" height="10" fill="#2e7de0"/>
+<text x="745" y="324" font-size="11">Backoff + jitter (105)</text>
+<rect x="898.4" y="314" width="10" height="10" fill="#2ea36b"/>
+<text x="912.4" y="324" font-size="11">Backoff + jitter + budget (24)</text>
+</svg>
+</body></html>
